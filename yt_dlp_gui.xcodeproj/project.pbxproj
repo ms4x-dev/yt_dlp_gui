@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D73E9F6E2E68F6CE000287FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D73E9F572E68F6CD000287FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73E9F5E2E68F6CD000287FB;
+			remoteInfo = yt_dlp_gui;
+		};
+		D73E9F782E68F6CE000287FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D73E9F572E68F6CD000287FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73E9F5E2E68F6CD000287FB;
+			remoteInfo = yt_dlp_gui;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D73E9F5F2E68F6CD000287FB /* yt_dlp_gui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yt_dlp_gui.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73E9F6D2E68F6CE000287FB /* yt_dlp_guiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73E9F772E68F6CE000287FB /* yt_dlp_guiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D73E9F612E68F6CD000287FB /* yt_dlp_gui */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yt_dlp_gui;
+			sourceTree = "<group>";
+		};
+		D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yt_dlp_guiTests;
+			sourceTree = "<group>";
+		};
+		D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yt_dlp_guiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D73E9F5C2E68F6CD000287FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F6A2E68F6CE000287FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F742E68F6CE000287FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D73E9F562E68F6CD000287FB = {
+			isa = PBXGroup;
+			children = (
+				D73E9F612E68F6CD000287FB /* yt_dlp_gui */,
+				D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */,
+				D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */,
+				D73E9F602E68F6CD000287FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D73E9F602E68F6CD000287FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D73E9F5F2E68F6CD000287FB /* yt_dlp_gui.app */,
+				D73E9F6D2E68F6CE000287FB /* yt_dlp_guiTests.xctest */,
+				D73E9F772E68F6CE000287FB /* yt_dlp_guiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D73E9F5E2E68F6CD000287FB /* yt_dlp_gui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D73E9F812E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_gui" */;
+			buildPhases = (
+				D73E9F5B2E68F6CD000287FB /* Sources */,
+				D73E9F5C2E68F6CD000287FB /* Frameworks */,
+				D73E9F5D2E68F6CD000287FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D73E9F612E68F6CD000287FB /* yt_dlp_gui */,
+			);
+			name = yt_dlp_gui;
+			packageProductDependencies = (
+			);
+			productName = yt_dlp_gui;
+			productReference = D73E9F5F2E68F6CD000287FB /* yt_dlp_gui.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D73E9F6C2E68F6CE000287FB /* yt_dlp_guiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D73E9F842E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_guiTests" */;
+			buildPhases = (
+				D73E9F692E68F6CE000287FB /* Sources */,
+				D73E9F6A2E68F6CE000287FB /* Frameworks */,
+				D73E9F6B2E68F6CE000287FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D73E9F6F2E68F6CE000287FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */,
+			);
+			name = yt_dlp_guiTests;
+			packageProductDependencies = (
+			);
+			productName = yt_dlp_guiTests;
+			productReference = D73E9F6D2E68F6CE000287FB /* yt_dlp_guiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D73E9F762E68F6CE000287FB /* yt_dlp_guiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D73E9F872E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_guiUITests" */;
+			buildPhases = (
+				D73E9F732E68F6CE000287FB /* Sources */,
+				D73E9F742E68F6CE000287FB /* Frameworks */,
+				D73E9F752E68F6CE000287FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D73E9F792E68F6CE000287FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */,
+			);
+			name = yt_dlp_guiUITests;
+			packageProductDependencies = (
+			);
+			productName = yt_dlp_guiUITests;
+			productReference = D73E9F772E68F6CE000287FB /* yt_dlp_guiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D73E9F572E68F6CD000287FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					D73E9F5E2E68F6CD000287FB = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					D73E9F6C2E68F6CE000287FB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = D73E9F5E2E68F6CD000287FB;
+					};
+					D73E9F762E68F6CE000287FB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = D73E9F5E2E68F6CD000287FB;
+					};
+				};
+			};
+			buildConfigurationList = D73E9F5A2E68F6CD000287FB /* Build configuration list for PBXProject "yt_dlp_gui" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D73E9F562E68F6CD000287FB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D73E9F602E68F6CD000287FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D73E9F5E2E68F6CD000287FB /* yt_dlp_gui */,
+				D73E9F6C2E68F6CE000287FB /* yt_dlp_guiTests */,
+				D73E9F762E68F6CE000287FB /* yt_dlp_guiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D73E9F5D2E68F6CD000287FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F6B2E68F6CE000287FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F752E68F6CE000287FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D73E9F5B2E68F6CD000287FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F692E68F6CE000287FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73E9F732E68F6CE000287FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D73E9F6F2E68F6CE000287FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73E9F5E2E68F6CD000287FB /* yt_dlp_gui */;
+			targetProxy = D73E9F6E2E68F6CE000287FB /* PBXContainerItemProxy */;
+		};
+		D73E9F792E68F6CE000287FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73E9F5E2E68F6CD000287FB /* yt_dlp_gui */;
+			targetProxy = D73E9F782E68F6CE000287FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D73E9F7F2E68F6CE000287FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D73E9F802E68F6CE000287FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D73E9F822E68F6CE000287FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = yt_dlp_gui/yt_dlp_gui.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-gui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D73E9F832E68F6CE000287FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = yt_dlp_gui/yt_dlp_gui.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-gui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D73E9F852E68F6CE000287FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-guiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yt_dlp_gui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yt_dlp_gui";
+			};
+			name = Debug;
+		};
+		D73E9F862E68F6CE000287FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-guiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yt_dlp_gui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yt_dlp_gui";
+			};
+			name = Release;
+		};
+		D73E9F882E68F6CE000287FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-guiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = yt_dlp_gui;
+			};
+			name = Debug;
+		};
+		D73E9F892E68F6CE000287FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "LMD.yt-dlp-guiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = yt_dlp_gui;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D73E9F5A2E68F6CD000287FB /* Build configuration list for PBXProject "yt_dlp_gui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73E9F7F2E68F6CE000287FB /* Debug */,
+				D73E9F802E68F6CE000287FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D73E9F812E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_gui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73E9F822E68F6CE000287FB /* Debug */,
+				D73E9F832E68F6CE000287FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D73E9F842E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_guiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73E9F852E68F6CE000287FB /* Debug */,
+				D73E9F862E68F6CE000287FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D73E9F872E68F6CE000287FB /* Build configuration list for PBXNativeTarget "yt_dlp_guiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73E9F882E68F6CE000287FB /* Debug */,
+				D73E9F892E68F6CE000287FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D73E9F572E68F6CD000287FB /* Project object */;
+}

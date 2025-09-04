@@ -23,18 +23,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D7C17B192E6979E500922A83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D73E9F5F2E68F6CD000287FB /* yt_dlp_gui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yt_dlp_gui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E9F6D2E68F6CE000287FB /* yt_dlp_guiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E9F772E68F6CE000287FB /* yt_dlp_guiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D73E9F612E68F6CD000287FB /* yt_dlp_gui */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = yt_dlp_gui;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		D7C17B1A2E6979E500922A83 /* Exceptions for "yt_dlp_gui" folder in "Embed Frameworks" phase from "yt_dlp_gui" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Resources/Python.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+			};
+			buildPhase = D7C17B192E6979E500922A83 /* Embed Frameworks */;
+			membershipExceptions = (
+				Resources/Python.xcframework,
+			);
 		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = yt_dlp_guiTests;
@@ -43,6 +64,14 @@
 		D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = yt_dlp_guiUITests;
+			sourceTree = "<group>";
+		};
+		D73E9FA92E68FD79000287FB /* yt_dlp_gui */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D7C17B1A2E6979E500922A83 /* Exceptions for "yt_dlp_gui" folder in "Embed Frameworks" phase from "yt_dlp_gui" target */,
+			);
+			path = yt_dlp_gui;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +104,7 @@
 		D73E9F562E68F6CD000287FB = {
 			isa = PBXGroup;
 			children = (
-				D73E9F612E68F6CD000287FB /* yt_dlp_gui */,
+				D73E9FA92E68FD79000287FB /* yt_dlp_gui */,
 				D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */,
 				D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */,
 				D73E9F602E68F6CD000287FB /* Products */,
@@ -102,13 +131,14 @@
 				D73E9F5B2E68F6CD000287FB /* Sources */,
 				D73E9F5C2E68F6CD000287FB /* Frameworks */,
 				D73E9F5D2E68F6CD000287FB /* Resources */,
+				D7C17B192E6979E500922A83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D73E9F612E68F6CD000287FB /* yt_dlp_gui */,
+				D73E9FA92E68FD79000287FB /* yt_dlp_gui */,
 			);
 			name = yt_dlp_gui;
 			packageProductDependencies = (

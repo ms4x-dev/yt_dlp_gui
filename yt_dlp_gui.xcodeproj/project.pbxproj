@@ -40,6 +40,8 @@
 		D73E9F5F2E68F6CD000287FB /* yt_dlp_gui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yt_dlp_gui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E9F6D2E68F6CE000287FB /* yt_dlp_guiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E9F772E68F6CE000287FB /* yt_dlp_guiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yt_dlp_guiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C17B442E6AFDFB00922A83 /* yt_dlp_guiDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yt_dlp_guiDebug.entitlements; sourceTree = "<group>"; };
+		D7C17B452E6AFFF700922A83 /* yt_dlp_guiRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yt_dlp_guiRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -74,6 +76,11 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		D7C17B3A2E69D15500922A83 /* Debug_TEST */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Debug_TEST;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,9 @@
 		D73E9F562E68F6CD000287FB = {
 			isa = PBXGroup;
 			children = (
+				D7C17B452E6AFFF700922A83 /* yt_dlp_guiRelease.entitlements */,
+				D7C17B442E6AFDFB00922A83 /* yt_dlp_guiDebug.entitlements */,
+				D7C17B3A2E69D15500922A83 /* Debug_TEST */,
 				D73E9FA92E68FD79000287FB /* Source */,
 				D73E9F702E68F6CE000287FB /* yt_dlp_guiTests */,
 				D73E9F7A2E68F6CE000287FB /* yt_dlp_guiUITests */,
@@ -139,6 +149,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D73E9FA92E68FD79000287FB /* Source */,
+				D7C17B3A2E69D15500922A83 /* Debug_TEST */,
 			);
 			name = yt_dlp_gui;
 			packageProductDependencies = (
@@ -202,6 +213,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
+				ORGANIZATIONNAME = LMD;
 				TargetAttributes = {
 					D73E9F5E2E68F6CD000287FB = {
 						CreatedOnToolsVersion = 16.4;
@@ -422,10 +434,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_ENTITLEMENTS = yt_dlp_guiDebug.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NR3J8ZR2BQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -447,10 +461,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_ENTITLEMENTS = yt_dlp_guiRelease.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NR3J8ZR2BQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

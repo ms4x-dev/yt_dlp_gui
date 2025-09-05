@@ -38,13 +38,10 @@ struct ContentView: View {
             }
             .padding(.horizontal)
 
-            ScrollView {
-                Text(progressText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-            }
-            .frame(height: 300)
-            .border(Color.gray)
+            TextEditor(text: $progressText)
+                .frame(height: 300)
+                .border(Color.gray)
+                .disabled(true)
 
             HStack {
                 Button("Download") {
@@ -75,15 +72,22 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                 }
+                Button("Save Credentials Only") {
+                    LoginManager.shared.setCredentials(username: newUsername, password: newPassword, account: "youtube_account")
+                    loginMessage = "Credentials saved (not tested)."
+                    showingUpdateLogin = false // dismiss modal
+                }
+
+                Button("Test & Save") {
+                    testAndSaveCredentials()
+                }
+                .disabled(newUsername.isEmpty || newPassword.isEmpty || isTestingCredentials)
+                
                 HStack {
                     Button("Cancel") {
                         showingUpdateLogin = false
                     }
                     Spacer()
-                    Button("Test & Save") {
-                        testAndSaveCredentials()
-                    }
-                    .disabled(newUsername.isEmpty || newPassword.isEmpty || isTestingCredentials)
                 }
             }
             .padding()
@@ -95,12 +99,13 @@ struct ContentView: View {
         guard !trimmedURL.isEmpty else { return }
 
         guard let scriptPath = Bundle.main.path(forResource: "yt_download", ofType: "py") else {
-            progressText += "Python script not found.\n"
+            DebugEngine.logError("Python script not found.", guiBinding: $progressText)
             return
         }
 
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/python3")
+        // Pass URL as separate argument to avoid zsh parsing errors
         process.arguments = [scriptPath, trimmedURL]
 
         let pipe = Pipe()
@@ -108,35 +113,43 @@ struct ContentView: View {
         process.standardError = pipe
 
         pipe.fileHandleForReading.readabilityHandler = { handle in
-            if let line = String(data: handle.availableData, encoding: .utf8) {
-                DispatchQueue.main.async {
-                    progressText += line
+            let data = handle.availableData
+            if data.count > 0 {
+                if let line = String(data: data, encoding: .utf8) {
+                    DispatchQueue.main.async {
+                        DebugEngine.logInfo("[Python] " + line, guiBinding: $progressText)
+                        print("[Python] " + line) // Ensure logs appear in Xcode console
+                    }
                 }
             }
         }
 
         do {
             try process.run()
+            DebugEngine.logInfo("Python subprocess started for URL: \(trimmedURL)", guiBinding: $progressText)
+            print("Python subprocess started for URL: \(trimmedURL)")
         } catch {
-            progressText += "Failed to run script: \(error)\n"
+            DebugEngine.logError("Failed to run script: \(error)", guiBinding: $progressText)
+            print("Failed to run script: \(error)")
         }
     }
     
     func testAndSaveCredentials() {
         isTestingCredentials = true
-        loginMessage = "Testing credentials..."
-        
+        DebugEngine.logInfo("Testing credentials...", guiBinding: $progressText)
+        print("Testing credentials...")
+
         // Save current credentials to allow rollback
-        let currentCredentials = LoginManager.shared.getCredentials(account: "yt_dlp_account", prompt: "Authenticate to access credentials")
+        let currentCredentials = LoginManager.shared.getCredentials(account: "youtube_account", prompt: "Authenticate to access credentials")
         let currentUsername = currentCredentials?.username
         let currentPassword = currentCredentials?.password
         
         // Set temporary new credentials
-        LoginManager.shared.setCredentials(username: newUsername, password: newPassword, account: "yt_dlp_account")
+        LoginManager.shared.setCredentials(username: newUsername, password: newPassword, account: "youtube_account_temp")
         
         // Run minimal credential test by invoking yt_download.py with a minimal test URL
         guard let scriptPath = Bundle.main.path(forResource: "yt_download", ofType: "py") else {
-            loginMessage = "Python script not found."
+            DebugEngine.logError("Python script not found.", guiBinding: $progressText)
             rollbackCredentials(username: currentUsername, password: currentPassword)
             isTestingCredentials = false
             return
@@ -146,18 +159,24 @@ struct ContentView: View {
         process.executableURL = URL(fileURLWithPath: "/usr/bin/python3")
         // Provide a minimal test URL that requires login, e.g. a private video URL or a test URL
         // For demonstration, use a placeholder URL "https://www.youtube.com/watch?v=private_test"
-        process.arguments = [scriptPath, "https://www.youtube.com/watch?v=private_test"]
+        process.arguments = [scriptPath, "https://www.youtube.com/watch?v=-EaiP31qWf0"]
         
         let pipe = Pipe()
         process.standardOutput = pipe
         process.standardError = pipe
         
-        var outputData = Data()
-        
+        var outputString = ""
+
         pipe.fileHandleForReading.readabilityHandler = { handle in
             let data = handle.availableData
             if data.count > 0 {
-                outputData.append(data)
+                if let line = String(data: data, encoding: .utf8) {
+                    DispatchQueue.main.async {
+                        DebugEngine.logInfo(line, guiBinding: $progressText)
+                        print(line) // Ensure logs appear in Xcode console
+                        outputString += line
+                    }
+                }
             }
         }
         
@@ -166,21 +185,25 @@ struct ContentView: View {
                 try process.run()
                 process.waitUntilExit()
                 
-                let outputString = String(data: outputData, encoding: .utf8) ?? ""
-                
                 DispatchQueue.main.async {
                     if process.terminationStatus == 0 && outputString.contains("login successful") {
-                        loginMessage = "Credentials updated successfully."
-                        // Credentials already set in LoginManager, nothing more to do
+                        DebugEngine.logSuccess("Credentials updated successfully.", guiBinding: $progressText)
+                        print("Credentials updated successfully.")
+                        // Promote temporary credentials to primary
+                        if let tempCreds = LoginManager.shared.getCredentials(account: "youtube_account_temp") {
+                            LoginManager.shared.setCredentials(username: tempCreds.username, password: tempCreds.password, account: "youtube_account")
+                        }
                     } else {
-                        loginMessage = "Credential test failed. Rolling back."
+                        DebugEngine.logError("Credential test failed. Rolling back.", guiBinding: $progressText)
+                        print("Credential test failed. Rolling back.")
                         rollbackCredentials(username: currentUsername, password: currentPassword)
                     }
                     isTestingCredentials = false
                 }
             } catch {
                 DispatchQueue.main.async {
-                    loginMessage = "Failed to run test script: \(error.localizedDescription). Rolling back."
+                    DebugEngine.logError("Failed to run test script: \(error.localizedDescription). Rolling back.", guiBinding: $progressText)
+                    print("Failed to run test script: \(error.localizedDescription). Rolling back.")
                     rollbackCredentials(username: currentUsername, password: currentPassword)
                     isTestingCredentials = false
                 }
@@ -191,6 +214,6 @@ struct ContentView: View {
     func rollbackCredentials(username: String?, password: String?) {
         // Only set credentials if both username and password are non-nil
         guard let username = username, let password = password else { return }
-        LoginManager.shared.setCredentials(username: username, password: password, account: "yt_dlp_account")
+        LoginManager.shared.setCredentials(username: username, password: password, account: "youtube_account")
     }
 }

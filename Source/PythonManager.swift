@@ -6,11 +6,14 @@
 //
 
 import Foundation    // Needed for Bundle, Process, Pipe, DispatchQueue
+import SwiftUI
 
 class PythonManager {
     static let shared = PythonManager()
 
-    func runScript(url: String, progressCallback: @escaping (String) -> Void) {
+    func runScript(url: String, guiBinding: Binding<String>, progressCallback: @escaping (String) -> Void) {
+        DebugEngine.logInfo("Attempting to locate Python binary and script...")
+
         guard let pythonPath = Bundle.main.path(
             forResource: "Python",
             ofType: nil,
@@ -20,29 +23,40 @@ class PythonManager {
             ofType: "py",
             inDirectory: "Resources"
         ) else {
+            DebugEngine.logError("Python binary or script not found.")
             progressCallback("Python binary or script not found.")
             return
         }
 
+        DebugEngine.logSuccess("Found Python binary and script.")
+
         let process = Process()
         process.executableURL = URL(fileURLWithPath: pythonPath)
-        process.arguments = [scriptPath, url]
+        // Wrap URL in quotes to prevent shell interpretation errors
+        process.arguments = [scriptPath, "\"\(url)\""]
+
+        DebugEngine.logInfo("Launching Python subprocess with arguments: \(process.arguments?.joined(separator: " ") ?? "")")
 
         let pipe = Pipe()
         process.standardOutput = pipe
         process.standardError = pipe
 
         pipe.fileHandleForReading.readabilityHandler = { handle in
-            if let line = String(data: handle.availableData, encoding: .utf8), !line.isEmpty {
+            let data = handle.availableData
+            if data.count > 0, let line = String(data: data, encoding: .utf8), !line.isEmpty {
                 DispatchQueue.main.async {
-                    progressCallback(line)
+                    progressCallback("[Python] \(line)")
+                    guiBinding.wrappedValue.append("[Python] \(line)")
+                    DebugEngine.logInfo("Python output: \(line)")
                 }
             }
         }
 
         do {
             try process.run()
+            DebugEngine.logSuccess("Python subprocess started successfully.")
         } catch {
+            DebugEngine.logError("Failed to run Python: \(error)")
             progressCallback("Failed to run Python: \(error)")
         }
     }
